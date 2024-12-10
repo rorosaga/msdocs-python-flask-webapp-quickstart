@@ -1,7 +1,15 @@
 param name string
 param location string = resourceGroup().location
 param sku string = 'standard'
+
+@description('Enable Key Vault for deployment operations')
 param enableVaultForDeployment bool = true
+@description('Enable RBAC authorization for the Key Vault')
+param enableRbacAuthorization bool = true
+@description('Enable soft delete for the Key Vault')
+param enableSoftDelete bool = true
+@description('Enable Key Vault for template deployment operations')
+param enableVaultForTemplateDeployment bool = true
 
 param roleAssignments array = []
 
@@ -69,6 +77,9 @@ resource keyVault 'Microsoft.KeyVault/vaults@2022-07-01' = {
   location: location
   properties: {
     enabledForDeployment: enableVaultForDeployment
+    enabledForTemplateDeployment: enableVaultForTemplateDeployment
+    enableSoftDelete: enableSoftDelete
+    enableRbacAuthorization: enableRbacAuthorization
     sku: {
       name: sku
       family: 'A'
