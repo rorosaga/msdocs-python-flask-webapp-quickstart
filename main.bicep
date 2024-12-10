@@ -15,12 +15,14 @@ module appServicePlan 'modules/app-service-plan.bicep' = {
 
 // Key Vault
 param keyVaultName string
+param keyVaultRoleAssignments array
 
 module keyVault 'modules/key-vault.bicep' = {
   name: 'keyVault-${userAlias}'
   params: {
     name: keyVaultName
     location: location
+    roleAssignments: keyVaultRoleAssignments
   }
 }
 
