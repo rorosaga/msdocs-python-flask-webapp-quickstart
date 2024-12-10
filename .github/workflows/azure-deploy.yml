@@ -87,8 +87,8 @@ jobs:
 
       - name: "Get container registry credentials from vault"
         run: |
-          REGISTRY_USERNAME=$(az keyvault secret show --name acr-username --vault-name ${{ env.KEY_VAULT_NAME }} --query value -o tsv)
-          REGISTRY_PASSWORD=$(az keyvault secret show --name acr-password0 --vault-name ${{ env.KEY_VAULT_NAME }} --query value -o tsv)
+          REGISTRY_USERNAME=$(az keyvault secret show --name rorosaga-cr-username --vault-name ${{ env.KEY_VAULT_NAME }} --query value -o tsv)
+          REGISTRY_PASSWORD=$(az keyvault secret show --name rorosaga-cr-password0 --vault-name ${{ env.KEY_VAULT_NAME }} --query value -o tsv)
           echo "REGISTRY_USERNAME=${REGISTRY_USERNAME}" >> $GITHUB_ENV
           echo "REGISTRY_PASSWORD=${REGISTRY_PASSWORD}" >> $GITHUB_ENV
 
