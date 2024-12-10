@@ -26,10 +26,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Checkout code
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@main
       # Lint Bicep code 
       - name: Run Bicep linter
         run: az bicep build --file ./main.bicep
+      
+      - name: Upload Bicep build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: bicep-build
+          path: ./main.bicep 
+      
+        # Checkout the repository to the runner.
+      - name: Checkout
+        uses: actions/checkout@v3
 
 
   deploy-infra:
@@ -38,7 +48,7 @@ jobs:
 
     steps:
 
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@main
   
     - name: Download Bicep build artifact
       uses: actions/download-artifact@v3
