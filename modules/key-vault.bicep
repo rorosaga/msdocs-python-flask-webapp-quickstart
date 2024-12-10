@@ -29,6 +29,7 @@ resource roleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = [
   for role in roleAssignments: {
   name: guid(keyVault.id, role.principalId, role.roleDefinitionIdOrName)
   scope: keyVault
+  dependsOn: [keyVault]
   properties: {
     principalId: role.principalId
     roleDefinitionId: role.roleDefinitionIdOrName
