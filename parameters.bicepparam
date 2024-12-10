@@ -14,7 +14,7 @@ param keyVaultRoleAssignments = [
 ]
 
 // Container Registry
-param containerRegistryName = 'rorosaga-cr'
+param containerRegistryName = 'rorosagacr'
 param containerRegistryUsernameSecretName = 'rorosaga-cr-username'
 param containerRegistryPassword0SecretName = 'rorosaga-cr-password0'
 param containerRegistryPassword1SecretName = 'rorosaga-cr-password1'

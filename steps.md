@@ -1,5 +1,7 @@
 ## **Configuring Docker Application Locally**
 
+Important guide: https://learn.microsoft.com/en-us/azure/developer/python/tutorial-containerize-simple-web-app-for-app-service?tabs=web-app-flask
+
 ### Step 1: Create a Dockerfile
 
 ```bash

@@ -11,7 +11,7 @@ on:
 
 env:
 
-  DOCKER_REGISTRY_SERVER_URL: rorosaga-cr.azurecr.io
+  DOCKER_REGISTRY_SERVER_URL: rorosagacr.azurecr.io
   KEY_VAULT_NAME: rorosaga-kv
   IMAGE_NAME: rorosaga-dockerimg
   APP_SERVICE_NAME: rorosaga-appservice
