@@ -107,7 +107,6 @@ jobs:
           docker build -t ${{ env.DOCKER_REGISTRY_SERVER_URL }}/${{ env.IMAGE_NAME}}:${{ steps.image-version.outputs.version}} .
           docker login ${{ env.DOCKER_REGISTRY_SERVER_URL }} -u ${{ env.REGISTRY_USERNAME }} -p ${{ env.REGISTRY_PASSWORD }}
           docker push ${{ env.DOCKER_REGISTRY_SERVER_URL }}/${{ env.IMAGE_NAME}}:${{ steps.image-version.outputs.version}}
-          docker push ${{ env.DOCKER_REGISTRY_SERVER_URL }}/${{ env.IMAGE_NAME}}:latest
 
   deploy-container:
     runs-on: ubuntu-latest
